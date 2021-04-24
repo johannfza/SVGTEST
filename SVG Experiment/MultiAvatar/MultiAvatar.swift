@@ -56,7 +56,11 @@ public class Multiavatar {
             eyes: ["#000", "none", "#00FFFF"],
             top: ["#fff", "#fff"]
         )
-        let themeClass_00 = ThemeClass(A: themeConfig_00_A, B: themeConfig_00_B, C: themeConfig_00_C)
+        let themeClass_00 = ThemeClass(
+            A: themeConfig_00_A,
+            B: themeConfig_00_B,
+            C: themeConfig_00_C
+        )
         let themes = Themes(_00: themeClass_00)
         return themes
     }()
