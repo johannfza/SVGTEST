@@ -52,21 +52,21 @@ public extension Multiavatar {
     }
 
     struct SP {
-        public var _00: SPConfig! = SPConfig()
-//        let _01: ThemeConfig
-//        let _02: ThemeConfig
-//        let _03: ThemeConfig
-//        let _04: ThemeConfig
-//        let _05: ThemeConfig
-//        let _06: ThemeConfig
-//        let _07: ThemeConfig
-//        let _08: ThemeConfig
-//        let _09: ThemeConfig
-//        let _10: ThemeConfig
-//        let _11: ThemeConfig
-//        let _12: ThemeConfig
-//        let _13: ThemeConfig
-//        let _14: ThemeConfig
-//        let _15: ThemeConfig
+        public var _00 = SPConfig()
+        public var _01 = SPConfig()
+        public var _02 = SPConfig()
+        public var _03 = SPConfig()
+        public var _04 = SPConfig()
+        public var _05 = SPConfig()
+        public var _06 = SPConfig()
+        public var _07 = SPConfig()
+        public var _08 = SPConfig()
+        public var _09 = SPConfig()
+        public var _10 = SPConfig()
+        public var _11 = SPConfig()
+        public var _12 = SPConfig()
+        public var _13 = SPConfig()
+        public var _14 = SPConfig()
+        public var _15 = SPConfig()
     }
 }
