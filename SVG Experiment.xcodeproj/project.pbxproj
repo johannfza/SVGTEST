@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		1EBB87C7262ADEF100A7192F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB87C5262ADEF100A7192F /* Main.storyboard */; };
 		1EBB87C9262ADEF600A7192F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB87C8262ADEF600A7192F /* Assets.xcassets */; };
 		1EBB87CC262ADEF600A7192F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EBB87CA262ADEF600A7192F /* LaunchScreen.storyboard */; };
+		1EBB87D8262BFF4000A7192F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1EBB87D7262BFF4000A7192F /* SDWebImage */; };
+		1EBB87DA262BFF4000A7192F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1EBB87D9262BFF4000A7192F /* SDWebImageMapKit */; };
+		1EBB87DE262BFFBB00A7192F /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 1EBB87DD262BFFBB00A7192F /* SDWebImageSVGCoder */; };
+		1EBB87E2262C22A300A7192F /* MultiAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB87E1262C22A300A7192F /* MultiAvatar.swift */; };
+		1EBB87E5262C232000A7192F /* Multiavatar+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB87E4262C232000A7192F /* Multiavatar+Themes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,8 @@
 		1EBB87C8262ADEF600A7192F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EBB87CB262ADEF600A7192F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EBB87CD262ADEF600A7192F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EBB87E1262C22A300A7192F /* MultiAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiAvatar.swift; sourceTree = "<group>"; };
+		1EBB87E4262C232000A7192F /* Multiavatar+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Multiavatar+Themes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EBB87DE262BFFBB00A7192F /* SDWebImageSVGCoder in Frameworks */,
+				1EBB87DA262BFF4000A7192F /* SDWebImageMapKit in Frameworks */,
+				1EBB87D8262BFF4000A7192F /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +66,7 @@
 		1EBB87BE262ADEF100A7192F /* SVG Experiment */ = {
 			isa = PBXGroup;
 			children = (
+				1EBB87E0262C228300A7192F /* MultiAvatar */,
 				1EBB87BF262ADEF100A7192F /* AppDelegate.swift */,
 				1EBB87C1262ADEF100A7192F /* SceneDelegate.swift */,
 				1EBB87C3262ADEF100A7192F /* ViewController.swift */,
@@ -65,6 +76,15 @@
 				1EBB87CD262ADEF600A7192F /* Info.plist */,
 			);
 			path = "SVG Experiment";
+			sourceTree = "<group>";
+		};
+		1EBB87E0262C228300A7192F /* MultiAvatar */ = {
+			isa = PBXGroup;
+			children = (
+				1EBB87E1262C22A300A7192F /* MultiAvatar.swift */,
+				1EBB87E4262C232000A7192F /* Multiavatar+Themes.swift */,
+			);
+			path = MultiAvatar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +103,11 @@
 			dependencies = (
 			);
 			name = "SVG Experiment";
+			packageProductDependencies = (
+				1EBB87D7262BFF4000A7192F /* SDWebImage */,
+				1EBB87D9262BFF4000A7192F /* SDWebImageMapKit */,
+				1EBB87DD262BFFBB00A7192F /* SDWebImageSVGCoder */,
+			);
 			productName = "SVG Experiment";
 			productReference = 1EBB87BC262ADEF100A7192F /* SVG Experiment.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +135,10 @@
 				Base,
 			);
 			mainGroup = 1EBB87B3262ADEF100A7192F;
+			packageReferences = (
+				1EBB87D6262BFF4000A7192F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				1EBB87DC262BFFBB00A7192F /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
+			);
 			productRefGroup = 1EBB87BD262ADEF100A7192F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EBB87E5262C232000A7192F /* Multiavatar+Themes.swift in Sources */,
 				1EBB87C4262ADEF100A7192F /* ViewController.swift in Sources */,
 				1EBB87C0262ADEF100A7192F /* AppDelegate.swift in Sources */,
+				1EBB87E2262C22A300A7192F /* MultiAvatar.swift in Sources */,
 				1EBB87C2262ADEF100A7192F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +370,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1EBB87D6262BFF4000A7192F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.0;
+			};
+		};
+		1EBB87DC262BFFBB00A7192F /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1EBB87D7262BFF4000A7192F /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EBB87D6262BFF4000A7192F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		1EBB87D9262BFF4000A7192F /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EBB87D6262BFF4000A7192F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		1EBB87DD262BFFBB00A7192F /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EBB87DC262BFFBB00A7192F /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1EBB87B4262ADEF100A7192F /* Project object */;
 }
