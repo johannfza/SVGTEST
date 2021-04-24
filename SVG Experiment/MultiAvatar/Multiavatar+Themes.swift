@@ -9,22 +9,22 @@ import Foundation
 
 public extension Multiavatar {
     struct Themes {
-        public var _00: ThemeClass!
-//        let _01: ThemeClass
-//        let _02: ThemeClass
-//        let _03: ThemeClass
-//        let _04: ThemeClass
-//        let _05: ThemeClass
-//        let _06: ThemeClass
-//        let _07: ThemeClass
-//        let _08: ThemeClass
-//        let _09: ThemeClass
-//        let _10: ThemeClass
-//        let _11: ThemeClass
-//        let _12: ThemeClass
-//        let _13: ThemeClass
-//        let _14: ThemeClass
-//        let _15: ThemeClass
+        public var _00: ThemeClass
+        public var _01: ThemeClass
+        public var _02: ThemeClass
+        public var _03: ThemeClass
+        public var _04: ThemeClass
+        public var _05: ThemeClass
+        public var _06: ThemeClass
+        public var _07: ThemeClass
+        public var _08: ThemeClass
+        public var _09: ThemeClass
+        public var _10: ThemeClass
+        public var _11: ThemeClass
+        public var _12: ThemeClass
+        public var _13: ThemeClass
+        public var _14: ThemeClass
+        public var _15: ThemeClass
     }
 
     struct ThemeClass {
