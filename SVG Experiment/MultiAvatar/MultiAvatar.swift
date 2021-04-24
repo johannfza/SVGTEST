@@ -32,9 +32,30 @@ public class Multiavatar {
 
     // Copy from multi avatar
     let themes: Themes = {
-        let themeConfig_00_A = ThemeConfig(env: ["#ff2f2b"], clo: ["#fff", "#000"], head: ["#fff"], mouth: ["#fff", "#000", "#000"], eyes: ["#000", "none", "#00FFFF"], top: ["#fff", "#fff"])
-        let themeConfig_00_B = ThemeConfig(env: ["#ff2f2b"], clo: ["#fff", "#000"], head: ["#fff"], mouth: ["#fff", "#000", "#000"], eyes: ["#000", "none", "#00FFFF"], top: ["#fff", "#fff"])
-        let themeConfig_00_C = ThemeConfig(env: ["#ff2f2b"], clo: ["#fff", "#000"], head: ["#fff"], mouth: ["#fff", "#000", "#000"], eyes: ["#000", "none", "#00FFFF"], top: ["#fff", "#fff"])
+        let themeConfig_00_A = ThemeConfig(
+            env: ["#ff2f2b"],
+            clo: ["#fff", "#000"],
+            head: ["#fff"],
+            mouth: ["#fff", "#000", "#000"],
+            eyes: ["#000", "none", "#00FFFF"],
+            top: ["#fff", "#fff"]
+        )
+        let themeConfig_00_B = ThemeConfig(
+            env: ["#ff2f2b"],
+            clo: ["#fff", "#000"],
+            head: ["#fff"],
+            mouth: ["#fff", "#000", "#000"],
+            eyes: ["#000", "none", "#00FFFF"],
+            top: ["#fff", "#fff"]
+        )
+        let themeConfig_00_C = ThemeConfig(
+            env: ["#ff2f2b"],
+            clo: ["#fff", "#000"],
+            head: ["#fff"],
+            mouth: ["#fff", "#000", "#000"],
+            eyes: ["#000", "none", "#00FFFF"],
+            top: ["#fff", "#fff"]
+        )
         let themeClass_00 = ThemeClass(A: themeConfig_00_A, B: themeConfig_00_B, C: themeConfig_00_C)
         let themes = Themes(_00: themeClass_00)
         return themes
