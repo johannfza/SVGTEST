@@ -108,7 +108,7 @@ class ViewController: UIViewController, WKUIDelegate {
 //        let data = Data(multiavatar.multiavatar(string: "", sansEnv: "", ver: "").utf8)
 //        webView.load(data, mimeType: "image/svg+xml", characterEncodingName: "UTF-8", baseURL: NSURL() as URL)
 
-        webView.loadHTMLString(multiavatar.multiavatar(string: "", sansEnv: "", ver: ""), baseURL: nil)
+        webView.loadHTMLString(multiavatar.multiavatar(string: "J", sansEnv: "", ver: ""), baseURL: nil)
     }
 
     override func viewDidLoad() {

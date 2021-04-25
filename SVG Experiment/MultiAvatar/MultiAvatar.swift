@@ -5,10 +5,11 @@
 //  Created by Johann Fong  on 18/4/21.
 //
 
+import CryptoKit
 import Foundation
 
 public class Multiavatar {
-    func multiavatar(string _: String, sansEnv _: String, ver _: String) -> String {
+    func multiavatar(string: String, sansEnv _: String, ver _: String) -> String {
         // '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231 231">'
         let svgStart = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 231 231\">"
         let svgEnd = "</svg>"
@@ -131,6 +132,135 @@ public class Multiavatar {
         sP._15.mouth = "<path d=\"m97.06 144.59a20.15 20.15 0 0 0 36.88 4.53z\" style=\"fill:#fff;"; "<path d=\"m97.06 144.59a20.15 20.15 0 0 0 36.88 4.53z\" style=\"fill:#fff;" + str + "2.9999px;stroke:#000;\"/>"
         sP._15.eyes = "<line x1=\"85.29\" x2=\"85.29\" y1=\"98.73\" y2=\"109.79\" style=\"fill:none;" + str + "8.7999px;stroke:#000;\"/><path d=\"m108.28 72.16h62.18c9.19 0 13.32 1.21 14.71 8.52 3.61 18.95 2.2 33.49-0.44 43.75a65.07 65.07 0 0 1-5.89 14.78 73.52 73.52 0 0 1-7.06 10.26c-1.8 2.27-5.17 1.21-4.19-1.09 0.14-0.47 0.27-1 0.4-1.48a14.29 14.29 0 0 0 0.52-6.62 12.52 12.52 0 0 0-3.88-6.3c-4.17-3.9-12.81-8.71-32.53-13.66-6.4-1.6-10.69-2.24-11.76-2.79a7.08 7.08 0 0 1-3.85-6.31v-9c0-2.39 0.18-4.55-1.56-6.57s-4.16-2.13-6.65-2.14a6 6 0 0 1-6-6v-9.35a6 6 0 0 1 6-6z\" style=\"fill:#1a1a1a;\"/><path d=\"m135.9 98.73v9.27m15.22-9.29v9.29\" style=\"fill:none;" + str + "7.7998px;stroke:#b2b2b2;\"/>"
         sP._15.top = "<path d=\"m109.99 15.57c-13.46 3.6301-19.789 11.95-24.069 24.08-6.9996-7-8.7307-10.82-7.5606-21.43a41 41 0 0 0-9.2698 24.988c0.0366 7.6776 5.6462 13.939 12.697 15.297-13.315 5.8106-15.258 22.033-14.045 33.524 5.7687-11.861 14.254-20.981 27.258-22.951-0.43017 6.6-2.5099 10.22-7.29 17.66 18.29-2.8601 25.119-7.8199 37.15-18.24 0.46001 0 1.0001 0.089 1.4606 0.12058-0.33023 3.5601-1.0906 6.5598-5.0004 12.46 9.5298-1.32 14.721-5.8006 17.539-11.671 8.8862 0.95314 15.836 6.785 21.26 14.818 1.928-15.211-4.4766-26.6-19.807-34.036 1.4167-2.6974 8.0143-11.925 17.661-15.721-1.424-0.28569-2.8883-0.49486-4.4033-0.61125-5.71-0.41992-13.62-0.99982-24.89 4.1703 2.8501-8.5101 10.21-11 18.05-13.12-15.131-1.2501-28.61-2.5898-40.53 8.1801-1.8997-6.21-0.18055-12.54 3.7889-17.52z\" style=\"fill:#fff;\"/><path d=\"m172.63 69.954c1.2292 14.064 0.93841 29.96 0.34635 45.169 1.7887 6.796 3.0379 13.235 3.8842 18.388l0.13973-0.011c1.0001 6.56 2.3597 13.18 3.2698 19.73 2.0002-6.5699 2.5303-18.25 3.2405-25.43 1.2597-13 1.8296-29.311-0.43017-41.931-0.85041-4.72-2.0007-7.6896-2.0007-8.4796 4.6205 3.5601 8.6606 9.2204 13.001 14.15-0.6751-3.4318-1.347-6.6004-2.0567-9.5273-4.047-5.7183-13.726-12.154-19.393-12.06z\" style=\"fill:#fff;\"/><path d=\"m157.97 34.471c-10.339 2.7579-17.715 13.543-19.132 16.24 15.33 7.4361 20.783 17.96 21.278 33.517 5.9534 8.8179 10.066 20.289 12.857 30.895 0.87636-13.178 1.8186-27.726 0.26566-44.28 2.5698 0.44857 9.1372 1.3934 18.781 11.17-2.1158-8.7321-4.5671-15.31-8.4539-20.283-4.5598-5.8401-10.999-10.431-23.809-13 9.6502-3.34 16.27-0.76993 25.5 2.1301-8.1388-7.4315-16.474-14.219-27.287-16.389z\" style=\"fill:#fff;\"/><path d=\"m61.473 73.354c-7.256-0.77501-13.024 2.3746-16.262 5.3879 0.73789-0.45409 1.3868-0.74208 1.8489-0.74208 0 0-1.5198 10.359-1.6197 11.519-1.56 19.73 0.99957 43.401 6.37 62.471 1.3099 4.6899 1.1895 3.0893 1.8898-0.9107 1.7526-10.061 3.3891-24.703 6.9739-38.864-5.068-17.627-4.2508-32.403 0.79937-38.861z\" style=\"fill:#fff;\"/><path d=\"m69.09 43.21c-0.0253 1.0803-8e-3 2.1612 0.0523 3.2402-3.8402 0-12.46 0.71984-16 2.1598-4.4504 1.8001-8.48 5.4801-11.67 11.83 7.2999-3.94 11.899-3.8502 16.66-1.8102-10.39 3.45-19.52 11.37-20.32 26.9 1.1456-1.5053 4.6079-4.9789 7.1393-6.6285 0.09-0.0587 0.17427-0.10556 0.26167-0.15946 3.7141-2.3211 9.0494-5.1247 15.181-4.9553-5.0501 6.4577-6.6824 20.434 0.28207 38.428 1.7866-7.0567 4.0574-13.994 7.0681-20.184-1e-3 -11.664 2.0764-27.774 15.391-33.585-7.0508-2.1538-12.709-7.991-14.043-15.236z\" style=\"fill:#fff;\"/>"
+
+        let stringData = Data(string.utf8)
+        let sha256Hash = SHA256.hash(data: stringData)
+        print("sha256Hash: ", sha256Hash)
+//        let regex = try NSRegularExpression(pattern: "/\D/g", options: )
+        let sha256Numbers = sha256Hash.description.components(separatedBy: CharacterSet.decimalDigits.inverted).joined().dropFirst(3)
+        print("sha256Numbers: ", sha256Numbers)
+        guard string.count > 0 else {
+            return ""
+        }
+        let hash = String(sha256Numbers[..<sha256Numbers.index(sha256Numbers.startIndex, offsetBy: 12)])
+        print("hash: ", hash)
+
+        var p = Parts()
+
+        var multiplier: Float = (47 / 100)
+
+        var parts: [Int] = []
+        // env
+        parts.append(Int((multiplier * Float(hash[0 ..< 2])!).rounded()))
+        // clo
+        parts.append(Int((multiplier * Float(hash[2 ..< 4])!).rounded()))
+        // head
+        parts.append(Int((multiplier * Float(hash[4 ..< 6])!).rounded()))
+        // mouth
+        parts.append(Int((multiplier * Float(hash[6 ..< 8])!).rounded()))
+        // eyes
+        parts.append(Int((multiplier * Float(hash[8 ..< 10])!).rounded()))
+        // top
+        parts.append(Int((multiplier * Float(hash[10...])!).rounded()))
+
+        print("parts: ", parts)
+
+//        p.env = hash[0..<2]
+//        p.env = String(Int((multiplier * Float(p.env!)!).rounded()))
+//        print("p.env: ", p.env!)
+//
+//        p.clo = hash[2..<4]
+//        p.clo = String(Int((multiplier * Float(p.clo!)!).rounded()))
+//        print("p.clo: ", p.clo!)
+//
+//        p.head = hash[4..<6]
+//        p.head = String(Int((multiplier * Float(p.head!)!).rounded()))
+//        print("p.head: ", p.head!)
+//
+//        p.mouth = hash[6..<8]
+//        p.mouth = String(Int((multiplier * Float(p.mouth!)!).rounded()))
+//        print("p.mouth: ", p.mouth!)
+//
+//        p.eyes = hash[8..<10]
+//        p.eyes = String(Int((multiplier * Float(p.eyes!)!).rounded()))
+//        print("p.eyes: ", p.eyes!)
+//
+//        p.top = hash[10...]
+//        p.top = String(Int((multiplier * Float(p.top!)!).rounded()))
+//        print("p.top: ", p.top!)
+
+        var partsStr: [String] = []
+
+        for (index, part) in parts.enumerated() {
+            var nr = part
+            var nrStr = ""
+            if nr > 31 {
+                // C Case
+                nr = nr - 32
+                if String(nr).count == 1 {
+                    nrStr = "0\(nr)C"
+                } else {
+                    nrStr = "\(nr)C"
+                }
+                partsStr.append(nrStr)
+            } else if nr > 15 {
+                // B Case
+                if String(nr).count == 1 {
+                    nrStr = "0\(nr)B"
+                } else {
+                    nrStr = "\(nr)B"
+                }
+                partsStr.append(nrStr)
+            } else {
+                // A Case
+                if String(nr).count == 1 {
+                    nrStr = "0\(nr)A"
+                } else {
+                    nrStr = "\(nr)A"
+                }
+                partsStr.append(nrStr)
+            }
+        }
+
+        print("partsStr: ", partsStr)
+
+//        // Get the SVG code for each part
+//         let final = [];
+//
+//         for (var part in p) {
+//           var partV = p[part].substring(0,2);
+//           var theme = p[part].substring(2,3);
+//           // console.log(part, partV, theme);
+//
+//           if (typeof(ver) != 'undefined') {
+//             partV = ver.part;
+//             theme = ver.theme;
+//           }
+//
+//           // Freeze a single base version
+//           // partV = '00'; theme = 'A';
+//
+//           final[part] = getFinal(part, partV, theme);
+//           // console.log(final[part]);
+//         }
+//
+//         function getFinal(part, partV, theme) {
+//           // console.log(part, partV, theme)
+//           var colors = themes[partV][theme][part];
+//           var svgString = sP[partV][part];
+//           // console.log(colors, svgString);
+//
+//           var regex = /#(.*?);/g;
+//           var result = svgString.match(regex);
+//
+//           var resultFinal = svgString;
+//
+//           if (result != null) {
+//             for (var i = 0; i < result.length; i++) {
+//               // console.log('replace', result[i], colors[i])
+//               resultFinal = resultFinal.replace(result[i], colors[i]+';');
+//             }
+//           }
 
         return "\(svgStart)\(sP._14.env!)\(sP._14.head!)\(sP._14.clo!)\(sP._14.top!)\(sP._14.eyes!)\(sP._14.mouth!)\(svgEnd)"
     }
@@ -639,3 +769,80 @@ public class Multiavatar {
         return themes
     }()
 }
+
+extension String {
+    subscript(_ i: Int) -> String {
+        let idx1 = index(startIndex, offsetBy: i)
+        let idx2 = index(idx1, offsetBy: 1)
+        return String(self[idx1 ..< idx2])
+    }
+
+    subscript(r: Range<Int>) -> String {
+        let start = index(startIndex, offsetBy: r.lowerBound)
+        let end = index(startIndex, offsetBy: r.upperBound)
+        return String(self[start ..< end])
+    }
+
+    subscript(r: CountableClosedRange<Int>) -> String {
+        let startIndex = index(self.startIndex, offsetBy: r.lowerBound)
+        let endIndex = index(startIndex, offsetBy: r.upperBound - r.lowerBound)
+        return String(self[startIndex ... endIndex])
+    }
+
+    subscript(_ range: CountablePartialRangeFrom<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+        return String(self[start...])
+    }
+}
+
+struct ThemeCollection {
+    typealias DictionaryType = [Int: [PartType: [String]]]
+
+    private var themes = DictionaryType()
+
+    init(themes: DictionaryType) {
+        self.themes = themes
+    }
+}
+
+// extension ThemeCollection: Collection {
+//
+//    // Required nested types, that tell Swift what our collection contains
+//    typealias Index = DictionaryType.Index
+//    typealias Element = DictionaryType.Element
+//    // The upper and lower bounds of the collection, used in iterations
+//    var startIndex: Index { return themes.startIndex }
+//    var endIndex: Index { return themes.endIndex }
+//    // Required subscript, based on a dictionary index
+//    subscript(index: Index) -> Iterator.Element {
+//        get { return themes[index] }
+//    }
+//    // Method that returns the next index when iterating
+//    func index(after i: ThemeCollection.DictionaryType.Index) -> ThemeCollection.DictionaryType.Index {
+//        return themes.index(after: i)
+//    }
+// }
+//
+// extension ThemeCollection {
+//    subscript(partType: PartType) -> [TOCHANGE] {
+//        get { return themes[part] ?? [] }
+//        set { themes[part] = newValue }
+//    }
+// }
+
+enum PartType {
+    case env
+    case head
+    case clo
+    case top
+    case eyes
+    case mouth
+}
+
+// let partSet = [PartType: String]
+//
+// struct Part {
+//    public var type: PartType
+//    public var value: String
+// }
+//

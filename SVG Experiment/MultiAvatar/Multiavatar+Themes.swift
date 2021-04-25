@@ -69,4 +69,13 @@ public extension Multiavatar {
         public var _14 = SPConfig()
         public var _15 = SPConfig()
     }
+
+    struct Parts {
+        public var env: String! = ""
+        public var clo: String! = ""
+        public var head: String! = ""
+        public var mouth: String! = ""
+        public var eyes: String! = ""
+        public var top: String! = ""
+    }
 }
