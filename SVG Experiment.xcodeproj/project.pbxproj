@@ -17,7 +17,6 @@
 		1EBB87DA262BFF4000A7192F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1EBB87D9262BFF4000A7192F /* SDWebImageMapKit */; };
 		1EBB87DE262BFFBB00A7192F /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 1EBB87DD262BFFBB00A7192F /* SDWebImageSVGCoder */; };
 		1EBB87E2262C22A300A7192F /* MultiAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB87E1262C22A300A7192F /* MultiAvatar.swift */; };
-		1EBB87E5262C232000A7192F /* Multiavatar+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBB87E4262C232000A7192F /* Multiavatar+Themes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		1EBB87CB262ADEF600A7192F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EBB87CD262ADEF600A7192F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EBB87E1262C22A300A7192F /* MultiAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiAvatar.swift; sourceTree = "<group>"; };
-		1EBB87E4262C232000A7192F /* Multiavatar+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Multiavatar+Themes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				1EBB87E1262C22A300A7192F /* MultiAvatar.swift */,
-				1EBB87E4262C232000A7192F /* Multiavatar+Themes.swift */,
 			);
 			path = MultiAvatar;
 			sourceTree = "<group>";
@@ -166,7 +163,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EBB87E5262C232000A7192F /* Multiavatar+Themes.swift in Sources */,
 				1EBB87C4262ADEF100A7192F /* ViewController.swift in Sources */,
 				1EBB87C0262ADEF100A7192F /* AppDelegate.swift in Sources */,
 				1EBB87E2262C22A300A7192F /* MultiAvatar.swift in Sources */,

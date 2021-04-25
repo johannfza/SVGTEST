@@ -26,9 +26,7 @@ public class Multiavatar {
         let hash = String(sha256Numbers[..<sha256Numbers.index(sha256Numbers.startIndex, offsetBy: 12)])
         print("hash: ", hash)
 
-        var p = Parts()
-
-        var multiplier: Float = (47 / 100)
+        let multiplier: Float = (47 / 100)
 
         var parts = [PartType: Int]()
         // env
@@ -45,30 +43,6 @@ public class Multiavatar {
         parts[.top] = Int((multiplier * Float(hash[10...])!).rounded())
 
         print("parts: ", parts)
-
-        //        p.env = hash[0..<2]
-        //        p.env = String(Int((multiplier * Float(p.env!)!).rounded()))
-        //        print("p.env: ", p.env!)
-        //
-        //        p.clo = hash[2..<4]
-        //        p.clo = String(Int((multiplier * Float(p.clo!)!).rounded()))
-        //        print("p.clo: ", p.clo!)
-        //
-        //        p.head = hash[4..<6]
-        //        p.head = String(Int((multiplier * Float(p.head!)!).rounded()))
-        //        print("p.head: ", p.head!)
-        //
-        //        p.mouth = hash[6..<8]
-        //        p.mouth = String(Int((multiplier * Float(p.mouth!)!).rounded()))
-        //        print("p.mouth: ", p.mouth!)
-        //
-        //        p.eyes = hash[8..<10]
-        //        p.eyes = String(Int((multiplier * Float(p.eyes!)!).rounded()))
-        //        print("p.eyes: ", p.eyes!)
-        //
-        //        p.top = hash[10...]
-        //        p.top = String(Int((multiplier * Float(p.top!)!).rounded()))
-        //        print("p.top: ", p.top!)
 
         var partsString = [PartType: String]()
 
@@ -133,40 +107,12 @@ public class Multiavatar {
         print("\(svgStart)\(final[.env]!)\(final[.head]!)\(final[.clo]!)\(final[.top]!)\(final[.eyes]!)\(final[.mouth]!)\(svgEnd)")
 
         return "\(svgStart)\(final[.env]!)\(final[.head]!)\(final[.clo]!)\(final[.top]!)\(final[.eyes]!)\(final[.mouth]!)\(svgEnd)"
-
-        //
-        //         function getFinal(part, partV, theme) {
-        //           // console.log(part, partV, theme)
-        //           var colors = themes[partV][theme][part];
-        //           var svgString = sP[partV][part];
-        //           // console.log(colors, svgString);
-        //
-        //           var regex = /#(.*?);/g;
-        //           var result = svgString.match(regex);
-        //
-        //           var resultFinal = svgString;
-        //
-        //           if (result != null) {
-        //             for (var i = 0; i < result.length; i++) {
-        //               // console.log('replace', result[i], colors[i])
-        //               resultFinal = resultFinal.replace(result[i], colors[i]+';');
-        //             }
-        //           }
-
-        //        print("\(svgStart)\(sP["14"][.env])\(sP["14"][.head])\(sP["14"][.clo])\(sP["14"][.top])\(sP["14"][.eyes])\(sP["14"][.mouth])\(svgEnd)")
-
-//        return "\(svgStart)\(sP["14"][.env]!)\(sP["14"][.head]!)\(sP["14"][.clo]!)\(sP["14"][.top]!)\(sP["14"][.eyes]!)\(sP["14"][.mouth]!)\(svgEnd)"
     }
 
     func getFinal(part: PartType, partV: String, theme: ThemeVersion) -> String {
-        // console.log(part, partV, theme)
         let colors: [String] = themes[partV]![theme]![part]!
         let svgString = sP[partV][part]!
-        // console.log(colors, svgString);
 
-//        let regex = try! NSRegularExpression(pattern: "#(.*?);")
-//        let range = NSRange(location: 0, length: svgString.utf16.count)
-//        let resultPreFormat = regex.matches(in: svgString, range: range)
         let result = matches(for: "#(.*?);", in: svgString)
 
         var resultFinal = svgString
@@ -178,7 +124,6 @@ public class Multiavatar {
             }
         }
         print("\(part): \(resultFinal)")
-        // console.log(resultFinal)
         return resultFinal
     }
 
@@ -840,31 +785,6 @@ extension StringPartsCollection {
     //    }
 }
 
-// extension ThemeCollection: Collection {
-//
-//    // Required nested types, that tell Swift what our collection contains
-//    typealias Index = DictionaryType.Index
-//    typealias Element = DictionaryType.Element
-//    // The upper and lower bounds of the collection, used in iterations
-//    var startIndex: Index { return themes.startIndex }
-//    var endIndex: Index { return themes.endIndex }
-//    // Required subscript, based on a dictionary index
-//    subscript(index: Index) -> Iterator.Element {
-//        get { return themes[index] }
-//    }
-//    // Method that returns the next index when iterating
-//    func index(after i: ThemeCollection.DictionaryType.Index) -> ThemeCollection.DictionaryType.Index {
-//        return themes.index(after: i)
-//    }
-// }
-//
-// extension ThemeCollection {
-//    subscript(partType: PartType) -> [TOCHANGE] {
-//        get { return themes[part] ?? [] }
-//        set { themes[part] = newValue }
-//    }
-// }
-
 enum PartType {
     case env
     case head
@@ -880,11 +800,3 @@ enum ThemeVersion: String {
     case b = "B"
     case c = "C"
 }
-
-// let partSet = [PartType: String]
-//
-// struct Part {
-//    public var type: PartType
-//    public var value: String
-// }
-//
