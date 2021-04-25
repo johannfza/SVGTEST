@@ -19,6 +19,7 @@ class ViewController: UIViewController, WKUIDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.distribution = .equalCentering
         view.axis = .vertical
+        view.backgroundColor = .white
         view.spacing = 5
         view.setPadding(16)
         return view
@@ -59,6 +60,7 @@ class ViewController: UIViewController, WKUIDelegate {
     var label: UILabel = {
         let label = UILabel()
         label.text = "MultiAvatar"
+        label.textColor = .black
         return label
     }()
 
@@ -70,6 +72,7 @@ class ViewController: UIViewController, WKUIDelegate {
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = label.font.withSize(32)
+        label.textColor = .black
         label.text = "MultiAvatar"
         return label
     }()
@@ -96,14 +99,14 @@ class ViewController: UIViewController, WKUIDelegate {
 
     @IBAction func createAvatar(_: Any) {
         avatarName.text = "J"
-        label.font = label.font.withSize(32)
+        avatarName.font = avatarName.font.withSize(32)
         webView.loadHTMLString(multiavatar.multiavatar(string: "J", sansEnv: "", ver: ""), baseURL: nil)
     }
 
     @IBAction func createRandomAvatar(_: Any) {
         let uuid = UUID().uuidString
         avatarName.text = uuid
-        label.font = label.font.withSize(12)
+        avatarName.font = avatarName.font.withSize(18)
         webView.loadHTMLString(multiavatar.multiavatar(string: uuid, sansEnv: "", ver: ""), baseURL: nil)
     }
 
