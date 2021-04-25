@@ -19,7 +19,7 @@ class ViewController: UIViewController, WKUIDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.distribution = .equalCentering
         view.axis = .vertical
-//        view.spacing = 5
+        view.spacing = 5
         view.setPadding(16)
         return view
     }()
@@ -37,7 +37,7 @@ class ViewController: UIViewController, WKUIDelegate {
 
     var createAvatarButton: UIButton = {
         let button = UIButton()
-        button.setTitle("createAvatar", for: .normal)
+        button.setTitle("Create Avatar J", for: .normal)
         button.backgroundColor = .lightGray
         button.layer.cornerRadius = 5
         button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -46,29 +46,33 @@ class ViewController: UIViewController, WKUIDelegate {
         return button
     }()
 
+    var createRandomAvatarButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Create Random Avatar", for: .normal)
+        button.backgroundColor = .lightGray
+        button.layer.cornerRadius = 5
+        button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        button.addTarget(self, action: #selector(createRandomAvatar(_:)), for: .touchUpInside)
+        return button
+    }()
+
     var label: UILabel = {
         let label = UILabel()
-        label.text = "Hello World"
+        label.text = "MultiAvatar"
         return label
     }()
 
-    var label2: UILabel = {
-        let label = UILabel()
-        label.text = "Hello World 2"
+    var avatarName: UILabel = {
+        let x: CGFloat = 0
+        let y: CGFloat = 0
+        let height: CGFloat = 50
+        let label = UILabel(frame: CGRect(x: x, y: y, width: UIScreen.main.bounds.width, height: height))
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = label.font.withSize(32)
+        label.text = "MultiAvatar"
         return label
     }()
-
-//    var imageView: UIImageView {
-//        let iv = UIImageView()
-//        let image = UIImage()
-//        image.sd_imageData() = getSVGString()
-//        iv.image =
-//        var rect = iv.frame
-//        rect.size.width = 200
-//        rect.size.height = 200
-//        iv.frame = rect
-//        return iv
-//    }()
 
     let webView: WKWebView = {
         let mySVGImage = "<svg height=\"190\"><polygon points=\"100,10 40,180 190,60 10,60 160,180\" style=\"fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;\"></svg>"
@@ -84,31 +88,21 @@ class ViewController: UIViewController, WKUIDelegate {
         return wv
     }()
 
-    let webView2: WKWebView = {
-        let mySVGImage = "<html><body><p>Hello!</p></body></html>"
-
-        let preferences = WKPreferences()
-//        preferences.javaScriptEnabled = false
-        let configuration = WKWebViewConfiguration()
-        let wv = WKWebView(frame: .zero, configuration: configuration)
-        wv.scrollView.isScrollEnabled = false
-        wv.translatesAutoresizingMaskIntoConstraints = false
-        wv.loadHTMLString(mySVGImage, baseURL: nil)
-        return wv
-    }()
-
     @IBAction func toggleSVG(_: Any) {
-        let data = toggle ? Data(getSVGString2().utf8) : Data(getSVGString().utf8)
-        webView.load(data, mimeType: "image/svg+xml", characterEncodingName: "UTF-8", baseURL: NSURL() as URL)
+        let data = toggle ? getSVGString2() : getSVGString()
+        webView.loadHTMLString(data, baseURL: nil)
         toggle = !toggle
     }
 
     @IBAction func createAvatar(_: Any) {
-//
-//        let data = Data(multiavatar.multiavatar(string: "", sansEnv: "", ver: "").utf8)
-//        webView.load(data, mimeType: "image/svg+xml", characterEncodingName: "UTF-8", baseURL: NSURL() as URL)
-
+        avatarName.text = "J"
         webView.loadHTMLString(multiavatar.multiavatar(string: "J", sansEnv: "", ver: ""), baseURL: nil)
+    }
+
+    @IBAction func createRandomAvatar(_: Any) {
+        let uuid = UUID().uuidString
+        avatarName.text = uuid
+        webView.loadHTMLString(multiavatar.multiavatar(string: uuid, sansEnv: "", ver: ""), baseURL: nil)
     }
 
     override func viewDidLoad() {
@@ -118,29 +112,17 @@ class ViewController: UIViewController, WKUIDelegate {
     }
 
     func setup() {
-//        webView.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
-//        view.addSubview(webView)
-
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(button)
         stackView.addArrangedSubview(createAvatarButton)
+        stackView.addArrangedSubview(createRandomAvatarButton)
 
-//        stackView.addArrangedSubview(label)
+        let svgString = getSVGString()
+        webView.loadHTMLString(svgString, baseURL: nil)
 
-//        webView.loadHTMLString(getSVGString(), baseURL: nil)
-        let data = Data(getSVGString().utf8)
-        webView.load(data, mimeType: "image/svg+xml", characterEncodingName: "UTF-8", baseURL: NSURL() as URL)
-
-//        let html = "<svg height=\"190\"><polygon points=\"100,10 40,180 190,60 10,60 160,180\" style=\"fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;\"></svg>"
-//
-//        webview.loadHTMLString(html, baseURL: nil)
-
-        label.backgroundColor = UIColor.red
-
-//        stackView.addArrangedSubview(webView2)
         view.addSubview(stackView)
         view.addSubview(webView)
-        view.addSubview(webView2)
+        view.addSubview(avatarName)
 
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -152,12 +134,14 @@ class ViewController: UIViewController, WKUIDelegate {
             webView.leadingAnchor
                 .constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView2.topAnchor
-                .constraint(equalTo: webView.bottomAnchor),
             webView.leadingAnchor
                 .constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            avatarName.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            avatarName.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            avatarName.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            avatarName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
         ])
     }
