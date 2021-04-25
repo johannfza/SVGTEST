@@ -96,12 +96,14 @@ class ViewController: UIViewController, WKUIDelegate {
 
     @IBAction func createAvatar(_: Any) {
         avatarName.text = "J"
+        label.font = label.font.withSize(32)
         webView.loadHTMLString(multiavatar.multiavatar(string: "J", sansEnv: "", ver: ""), baseURL: nil)
     }
 
     @IBAction func createRandomAvatar(_: Any) {
         let uuid = UUID().uuidString
         avatarName.text = uuid
+        label.font = label.font.withSize(12)
         webView.loadHTMLString(multiavatar.multiavatar(string: uuid, sansEnv: "", ver: ""), baseURL: nil)
     }
 
